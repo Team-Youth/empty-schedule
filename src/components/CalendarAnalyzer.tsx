@@ -6,6 +6,7 @@ import { CalendarEvent, FreeSlot, AnalysisSettings } from '../types/calendar'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
+import * as gtag from '../lib/gtag'
 
 const CalendarAnalyzer: React.FC = () => {
   const { t } = useTranslation('common')
@@ -30,9 +31,24 @@ const CalendarAnalyzer: React.FC = () => {
       const analyzer = new ICSAnalyzer()
       const parsedEvents = analyzer.parseICS(content)
       setEvents(parsedEvents)
+      
+      // Google Analytics 이벤트 추적
+      gtag.event({
+        action: 'file_upload',
+        category: 'calendar_analyzer',
+        label: 'ics_file_uploaded',
+        value: parsedEvents.length
+      })
     } catch (error) {
       console.error('Error parsing ICS file:', error)
       alert(t('common.error'))
+      
+      // 에러 이벤트 추적
+      gtag.event({
+        action: 'file_upload_error',
+        category: 'calendar_analyzer',
+        label: 'ics_parsing_failed'
+      })
     }
   }, [t])
 
@@ -79,9 +95,24 @@ const CalendarAnalyzer: React.FC = () => {
       )
       
       setFreeSlots(slots)
+      
+      // Google Analytics 이벤트 추적
+      gtag.event({
+        action: 'schedule_analysis',
+        category: 'calendar_analyzer',
+        label: 'free_slots_analyzed',
+        value: slots.length
+      })
     } catch (error) {
       console.error('Error analyzing schedule:', error)
       alert(t('common.error'))
+      
+      // 에러 이벤트 추적
+      gtag.event({
+        action: 'analysis_error',
+        category: 'calendar_analyzer',
+        label: 'schedule_analysis_failed'
+      })
     } finally {
       setIsAnalyzing(false)
     }
@@ -98,6 +129,14 @@ const CalendarAnalyzer: React.FC = () => {
     a.download = 'free-time-slots.ics'
     a.click()
     URL.revokeObjectURL(url)
+    
+    // Google Analytics 이벤트 추적
+    gtag.event({
+      action: 'export_calendar',
+      category: 'calendar_analyzer',
+      label: 'free_slots_exported',
+      value: freeSlots.length
+    })
   }, [freeSlots])
 
   // Group free slots by date

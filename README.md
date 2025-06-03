@@ -51,15 +51,50 @@ A privacy-first, multi-language web application that analyzes your ICS calendar 
    yarn install
    ```
 
-3. **Run the development server**
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory:
+   ```bash
+   # Google Analytics
+   NEXT_PUBLIC_GA_ID=YOUR_GA_MEASUREMENT_ID
+   ```
+   Replace `YOUR_GA_MEASUREMENT_ID` with your actual Google Analytics 4 measurement ID (e.g., `G-XXXXXXXXXX`)
+
+4. **Run the development server**
    ```bash
    npm run dev
    # or
    yarn dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📊 Analytics Setup
+
+This project includes Google Analytics 4 integration for tracking user interactions and site performance.
+
+### Getting Your GA4 Measurement ID
+
+1. Go to [Google Analytics](https://analytics.google.com/)
+2. Create a new property or select an existing one
+3. Navigate to **Admin** → **Property** → **Data Streams**
+4. Select your web stream
+5. Copy the **Measurement ID** (starts with `G-`)
+
+### Tracked Events
+
+The application automatically tracks:
+- 📤 **File Uploads**: When users upload ICS files
+- 🔍 **Schedule Analysis**: When users analyze their calendar
+- 📥 **Export Actions**: When users export free time slots
+- ❌ **Error Events**: When parsing or analysis fails
+
+### Privacy Compliance
+
+- Analytics data is anonymous and aggregated
+- No personal calendar content is transmitted
+- Users can opt-out via browser settings
+- GDPR and privacy-friendly implementation
 
 ## 📁 Project Structure
 

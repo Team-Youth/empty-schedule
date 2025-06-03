@@ -1,9 +1,25 @@
 import type { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
 import Head from 'next/head'
+import Script from 'next/script'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import * as gtag from '../src/lib/gtag'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <>
       <Head>
@@ -16,6 +32,33 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet" 
         />
       </Head>
+      
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      {gtag.GA_TRACKING_ID && (
+        <>
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          />
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gtag.GA_TRACKING_ID}', {
+                  page_location: window.location.href,
+                  page_title: document.title,
+                  send_page_view: false,
+                });
+              `,
+            }}
+          />
+        </>
+      )}
+      
       <Component {...pageProps} />
     </>
   )
