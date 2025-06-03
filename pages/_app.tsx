@@ -34,6 +34,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" 
           rel="stylesheet" 
         />
+        
+        {/* Google AdSense */}
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2656946349231675"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       
       {/* Global Site Tag (gtag.js) - Google Analytics */}
@@ -60,16 +67,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             }}
           />
         </>
-      )}
-      
-      {/* Google AdSense */}
-      {adsense.ADSENSE_CLIENT_ID && (
-        <Script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.ADSENSE_CLIENT_ID}`}
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
       )}
       
       <Component {...pageProps} />
