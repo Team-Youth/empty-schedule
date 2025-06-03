@@ -51,6 +51,17 @@
     "hours": "hours",
     "minutes": "minutes",
     "freeTimeList": "🕐 Available Time Slots",
+    "summaryText": "Total {{days}} days, {{slots}} free time slots",
+    "timeFormat": "{{hours}} hours {{minutes}} minutes",
+    "slotsCount": "{{count}} slots",
+    "until": "until",
+    "oneHourPlus": "1 hour+",
+    "thirtyMinutes": "30 min",
+    "timeDisplay": {
+      "hoursOnly": "{{hours}} hours",
+      "minutesOnly": "{{minutes}} minutes",
+      "hoursAndMinutes": "{{hours}} hours {{minutes}} minutes"
+    },
     "dayNames": {
       "0": "Sunday",
       "1": "Monday", 

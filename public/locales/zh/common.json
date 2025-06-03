@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "title": "空闲时间分析器 - 在您的日历中查找可用时间段",
+    "description": "上传您的ICS日历文件，立即发现空闲时间段。用我们的智能日历分析器优化您的日程安排，找到完美的会议时间。",
+    "keywords": "日历分析器, ICS解析器, 空闲时间查找器, 日程优化器, 会议规划器, 时间管理, 日历空隙"
+  },
+  "nav": {
+    "title": "📅 空闲时间分析器",
+    "home": "首页",
+    "about": "关于",
+    "privacy": "隐私"
+  },
+  "hero": {
+    "title": "立即找到您的空闲时间",
+    "subtitle": "上传您的日历文件，发现可用于会议、任务或个人时间的时间段",
+    "cta": "开始分析"
+  },
+  "upload": {
+    "title": "上传日历文件",
+    "button": "📁 选择ICS文件",
+    "loaded": "已加载{{count}}个事件",
+    "dragDrop": "将ICS文件拖放到此处或点击浏览",
+    "formats": "支持来自Google日历、Outlook、Apple日历等的.ics文件"
+  },
+  "settings": {
+    "title": "分析设置",
+    "dateRange": "日期范围",
+    "startDate": "开始日期",
+    "endDate": "结束日期",
+    "workHours": "工作时间",
+    "workStart": "工作开始时间",
+    "workEnd": "工作结束时间",
+    "options": "选项",
+    "includeWeekends": "包括周末",
+    "minDuration": "最小持续时间（分钟）",
+    "maxGap": "事件间最大间隔（分钟）"
+  },
+  "analyze": {
+    "button": "分析日程",
+    "processing": "分析中...",
+    "error": "请设置开始和结束日期"
+  },
+  "results": {
+    "title": "📊 分析结果",
+    "summary": "摘要",
+    "period": "分析期间",
+    "totalEvents": "总事件数",
+    "freeSlots": "空闲时间段",
+    "totalFreeTime": "总空闲时间",
+    "noFreeTime": "在选定期间内未找到空闲时间段",
+    "hours": "小时",
+    "minutes": "分钟",
+    "freeTimeList": "🕐 可用时间段",
+    "summaryText": "总共{{days}}天，{{slots}}个空闲时间段",
+    "timeFormat": "{{hours}}小时{{minutes}}分钟",
+    "slotsCount": "{{count}}个时间段",
+    "until": "至",
+    "oneHourPlus": "1小时+",
+    "thirtyMinutes": "30分钟",
+    "timeDisplay": {
+      "hoursOnly": "{{hours}}小时",
+      "minutesOnly": "{{minutes}}分钟",
+      "hoursAndMinutes": "{{hours}}小时{{minutes}}分钟"
+    },
+    "dayNames": {
+      "0": "星期日",
+      "1": "星期一",
+      "2": "星期二",
+      "3": "星期三",
+      "4": "星期四",
+      "5": "星期五",
+      "6": "星期六"
+    }
+  },
+  "features": {
+    "title": "为什么选择我们的日历分析器？",
+    "subtitle": "帮助您更好地管理时间的强大功能",
+    "smart": {
+      "title": "智能分析",
+      "description": "先进的算法检测冲突并自动优化您的日程安排"
+    },
+    "privacy": {
+      "title": "隐私优先",
+      "description": "所有处理都在您的浏览器中进行。您的日历数据永远不会离开您的设备"
+    },
+    "formats": {
+      "title": "通用支持",
+      "description": "支持来自Google日历、Outlook、Apple日历等的ICS文件"
+    },
+    "export": {
+      "title": "导出结果",
+      "description": "将您的空闲时间段导出为ICS文件或与他人分享"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 空闲时间分析器. 保留所有权利.",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "support": "支持"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "retry": "重试",
+    "close": "关闭",
+    "save": "保存",
+    "cancel": "取消",
+    "continue": "继续",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步"
+  }
+} 

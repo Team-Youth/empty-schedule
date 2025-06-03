@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "title": "Freie Zeit Analysator - Finden Sie verfügbare Zeiten in Ihrem Kalender",
+    "description": "Laden Sie Ihre ICS-Kalenderdatei hoch und entdecken Sie sofort freie Zeitfenster. Optimieren Sie Ihren Zeitplan und finden Sie perfekte Terminzeiten.",
+    "keywords": "Kalender-Analysator, ICS-Parser, Freie Zeit Finder, Terminplaner, Zeitmanagement, Kalender-Lücken"
+  },
+  "nav": {
+    "title": "📅 Freie Zeit Analysator",
+    "home": "Startseite",
+    "about": "Über uns",
+    "privacy": "Datenschutz"
+  },
+  "hero": {
+    "title": "Finden Sie Ihre freie Zeit sofort",
+    "subtitle": "Laden Sie Ihre Kalenderdatei hoch und entdecken Sie verfügbare Zeitfenster für Meetings, Aufgaben oder persönliche Zeit",
+    "cta": "Analyse starten"
+  },
+  "upload": {
+    "title": "Kalenderdatei hochladen",
+    "button": "📁 ICS-Datei wählen",
+    "loaded": "{{count}} Termine geladen",
+    "dragDrop": "Ziehen Sie Ihre ICS-Datei hierher oder klicken Sie zum Durchsuchen",
+    "formats": "Unterstützt .ics-Dateien von Google Kalender, Outlook, Apple Kalender und mehr"
+  },
+  "settings": {
+    "title": "Analyse-Einstellungen",
+    "dateRange": "Datumsbereich",
+    "startDate": "Startdatum",
+    "endDate": "Enddatum",
+    "workHours": "Arbeitszeiten",
+    "workStart": "Arbeitsbeginn",
+    "workEnd": "Arbeitsende",
+    "options": "Optionen",
+    "includeWeekends": "Wochenenden einschließen",
+    "minDuration": "Mindestdauer (Minuten)",
+    "maxGap": "Maximaler Abstand zwischen Terminen (Minuten)"
+  },
+  "analyze": {
+    "button": "Zeitplan analysieren",
+    "processing": "Analysiere...",
+    "error": "Bitte Start- und Enddatum festlegen"
+  },
+  "results": {
+    "title": "📊 Analyse-Ergebnisse",
+    "summary": "Zusammenfassung",
+    "period": "Analyse-Zeitraum",
+    "totalEvents": "Termine insgesamt",
+    "freeSlots": "Freie Zeitfenster",
+    "totalFreeTime": "Freie Zeit insgesamt",
+    "noFreeTime": "Keine freien Zeitfenster im gewählten Zeitraum gefunden",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "freeTimeList": "🕐 Verfügbare Zeitfenster",
+    "summaryText": "Insgesamt {{days}} Tage, {{slots}} freie Zeitfenster",
+    "timeFormat": "{{hours}} Stunden {{minutes}} Minuten",
+    "slotsCount": "{{count}} Zeitfenster",
+    "until": "bis",
+    "oneHourPlus": "1 Stunde+",
+    "thirtyMinutes": "30 Min",
+    "timeDisplay": {
+      "hoursOnly": "{{hours}} Stunden",
+      "minutesOnly": "{{minutes}} Minuten",
+      "hoursAndMinutes": "{{hours}} Stunden {{minutes}} Minuten"
+    },
+    "dayNames": {
+      "0": "Sonntag",
+      "1": "Montag",
+      "2": "Dienstag",
+      "3": "Mittwoch",
+      "4": "Donnerstag",
+      "5": "Freitag",
+      "6": "Samstag"
+    }
+  },
+  "features": {
+    "title": "Warum unseren Kalender-Analysator wählen?",
+    "subtitle": "Leistungsstarke Funktionen für besseres Zeitmanagement",
+    "smart": {
+      "title": "Intelligente Analyse",
+      "description": "Fortschrittliche Algorithmen erkennen Konflikte und optimieren Ihren Zeitplan automatisch"
+    },
+    "privacy": {
+      "title": "Datenschutz zuerst",
+      "description": "Die gesamte Verarbeitung erfolgt in Ihrem Browser. Ihre Kalenderdaten verlassen niemals Ihr Gerät"
+    },
+    "formats": {
+      "title": "Universelle Unterstützung",
+      "description": "Funktioniert mit ICS-Dateien von Google Kalender, Outlook, Apple Kalender und mehr"
+    },
+    "export": {
+      "title": "Ergebnisse exportieren",
+      "description": "Exportieren Sie Ihre freien Zeitfenster als ICS-Dateien oder teilen Sie sie mit anderen"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Freie Zeit Analysator. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "support": "Support"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "retry": "Wiederholen",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "continue": "Weiter",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Vorherige"
+  }
+} 

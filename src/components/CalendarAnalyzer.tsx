@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
 import { Upload, Calendar, Clock, Settings, Download, Sun, Moon, Coffee, Sparkles } from 'lucide-react'
 import { ICSAnalyzer } from '../lib/icsAnalyzer'
 import { CalendarEvent, FreeSlot, AnalysisSettings } from '../types/calendar'
@@ -10,6 +11,8 @@ import * as gtag from '../lib/gtag'
 
 const CalendarAnalyzer: React.FC = () => {
   const { t } = useTranslation('common')
+  const router = useRouter()
+  const { locale = 'en' } = router
   
   const [events, setEvents] = useState<CalendarEvent[]>([])
   const [freeSlots, setFreeSlots] = useState<FreeSlot[]>([])
@@ -164,13 +167,54 @@ const CalendarAnalyzer: React.FC = () => {
 
   const formatDate = useCallback((dateString: string) => {
     const date = new Date(dateString)
-    return date.toLocaleDateString('ko-KR', { 
-      year: 'numeric', 
+    const dayOfWeek = date.getDay()
+    
+    // locale에 따른 날짜 형식 설정
+    const localeMap: { [key: string]: string } = {
+      'ko': 'ko-KR',
+      'en': 'en-US',
+      'ja': 'ja-JP',
+      'zh': 'zh-CN',
+      'es': 'es-ES',
+      'fr': 'fr-FR',
+      'de': 'de-DE'
+    }
+    
+    const browserLocale = localeMap[locale] || 'en-US'
+    
+    // 기본 날짜 포맷 (년, 월, 일)
+    const dateOptions: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
       month: 'long', 
-      day: 'numeric',
-      weekday: 'long'
-    })
-  }, [])
+      day: 'numeric'
+    }
+    
+    const formattedDate = date.toLocaleDateString(browserLocale, dateOptions)
+    const dayName = t(`results.dayNames.${dayOfWeek}`)
+    
+    // 언어별 날짜 포맷 조합
+    if (locale === 'ko') {
+      return `${formattedDate} ${dayName}`
+    } else if (locale === 'ja') {
+      return `${formattedDate} ${dayName}`
+    } else if (locale === 'zh') {
+      return `${formattedDate} ${dayName}`
+    } else {
+      return `${dayName}, ${formattedDate}`
+    }
+  }, [t, locale])
+
+  // 시간 표시 포맷팅 함수
+  const formatTimeDisplay = useCallback((hours: number, minutes: number) => {
+    if (hours > 0 && minutes > 0) {
+      return t('results.timeDisplay.hoursAndMinutes', { hours, minutes })
+    } else if (hours > 0) {
+      return t('results.timeDisplay.hoursOnly', { hours })
+    } else if (minutes > 0) {
+      return t('results.timeDisplay.minutesOnly', { minutes })
+    }
+    return ''
+  }, [t])
 
   // Get time period icon and colors
   const getTimeSlotStyle = useCallback((slot: FreeSlot) => {
@@ -395,7 +439,10 @@ const CalendarAnalyzer: React.FC = () => {
               </Button>
             </div>
             <CardDescription>
-              총 {Object.keys(groupedSlots).length}일, {freeSlots.length}개의 빈 시간 슬롯
+              {t('results.summaryText', { 
+                days: Object.keys(groupedSlots).length, 
+                slots: freeSlots.length 
+              })}
             </CardDescription>
           </CardHeader>
           <CardContent className="p-6">
@@ -406,13 +453,13 @@ const CalendarAnalyzer: React.FC = () => {
                   <div>
                     <p className="text-sm text-white/80 mb-1">{t('results.totalFreeTime')}</p>
                     <p className="text-3xl font-bold">
-                      {totalHours}시간 {totalMinutes}분
+                      {formatTimeDisplay(totalHours, totalMinutes)}
                     </p>
                   </div>
                   <div className="text-right">
                     <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
                       <Sparkles className="w-5 h-5" />
-                      <span className="font-semibold">{freeSlots.length}개 슬롯</span>
+                      <span className="font-semibold">{t('results.slotsCount', { count: freeSlots.length })}</span>
                     </div>
                   </div>
                 </div>
@@ -429,7 +476,7 @@ const CalendarAnalyzer: React.FC = () => {
                       {formatDate(date)}
                     </h4>
                     <Badge variant="outline" className="bg-gray-100">
-                      {slots.length}개 슬롯
+                      {t('results.slotsCount', { count: slots.length })}
                     </Badge>
                   </div>
                   
@@ -457,7 +504,7 @@ const CalendarAnalyzer: React.FC = () => {
                                     {formatTime(slot.start)}
                                   </p>
                                   <p className="text-sm text-gray-600">
-                                    {formatTime(slot.end)}까지
+                                    {formatTime(slot.end)} {t('results.until')}
                                   </p>
                                 </div>
                               </div>
@@ -465,14 +512,14 @@ const CalendarAnalyzer: React.FC = () => {
                               <Badge 
                                 className={`${style.badgeColor} text-white font-semibold shadow-lg`}
                               >
-                                {duration >= 1 ? '1시간+' : '30분'}
+                                {duration >= 1 ? t('results.oneHourPlus') : t('results.thirtyMinutes')}
                               </Badge>
                             </div>
                             
                             <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
                               <Clock className="w-4 h-4" />
                               <span>
-                                {duration > 0 ? `${duration}시간 ` : ''}{minutes > 0 ? `${minutes}분` : ''}
+                                {formatTimeDisplay(duration, minutes)}
                               </span>
                             </div>
                             

@@ -51,6 +51,17 @@
     "hours": "時間",
     "minutes": "分",
     "freeTimeList": "🕐 利用可能な時間スロット",
+    "summaryText": "合計{{days}}日、{{slots}}個の空き時間スロット",
+    "timeFormat": "{{hours}}時間{{minutes}}分",
+    "slotsCount": "{{count}}個のスロット",
+    "until": "まで",
+    "oneHourPlus": "1時間以上",
+    "thirtyMinutes": "30分",
+    "timeDisplay": {
+      "hoursOnly": "{{hours}}時間",
+      "minutesOnly": "{{minutes}}分",
+      "hoursAndMinutes": "{{hours}}時間{{minutes}}分"
+    },
     "dayNames": {
       "0": "日曜日",
       "1": "月曜日",

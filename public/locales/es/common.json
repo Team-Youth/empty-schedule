@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "title": "Analizador de Tiempo Libre - Encuentra Espacios Disponibles en tu Calendario",
+    "description": "Sube tu archivo de calendario ICS y descubre instantáneamente espacios de tiempo libre. Optimiza tu horario y encuentra momentos perfectos para reuniones con nuestro analizador inteligente.",
+    "keywords": "analizador de calendario, parser ICS, buscador de tiempo libre, optimizador de horarios, planificador de reuniones, gestión del tiempo, huecos de calendario"
+  },
+  "nav": {
+    "title": "📅 Analizador de Tiempo Libre",
+    "home": "Inicio",
+    "about": "Acerca de",
+    "privacy": "Privacidad"
+  },
+  "hero": {
+    "title": "Encuentra tu Tiempo Libre al Instante",
+    "subtitle": "Sube tu archivo de calendario y descubre espacios disponibles para reuniones, tareas o tiempo personal",
+    "cta": "Comenzar Análisis"
+  },
+  "upload": {
+    "title": "Subir Archivo de Calendario",
+    "button": "📁 Elegir Archivo ICS",
+    "loaded": "{{count}} eventos cargados",
+    "dragDrop": "Arrastra y suelta tu archivo ICS aquí o haz clic para navegar",
+    "formats": "Compatible con archivos .ics de Google Calendar, Outlook, Apple Calendar y más"
+  },
+  "settings": {
+    "title": "Configuración de Análisis",
+    "dateRange": "Rango de Fechas",
+    "startDate": "Fecha de Inicio",
+    "endDate": "Fecha de Fin",
+    "workHours": "Horario de Trabajo",
+    "workStart": "Hora de Inicio de Trabajo",
+    "workEnd": "Hora de Fin de Trabajo",
+    "options": "Opciones",
+    "includeWeekends": "Incluir Fines de Semana",
+    "minDuration": "Duración Mínima (minutos)",
+    "maxGap": "Espacio Máximo Entre Eventos (minutos)"
+  },
+  "analyze": {
+    "button": "Analizar Horario",
+    "processing": "Analizando...",
+    "error": "Por favor establece las fechas de inicio y fin"
+  },
+  "results": {
+    "title": "📊 Resultados del Análisis",
+    "summary": "Resumen",
+    "period": "Período de Análisis",
+    "totalEvents": "Total de Eventos",
+    "freeSlots": "Espacios Libres",
+    "totalFreeTime": "Tiempo Libre Total",
+    "noFreeTime": "No se encontraron espacios libres en el período seleccionado",
+    "hours": "horas",
+    "minutes": "minutos",
+    "freeTimeList": "🕐 Espacios de Tiempo Disponibles",
+    "summaryText": "Total {{days}} días, {{slots}} espacios de tiempo libre",
+    "timeFormat": "{{hours}} horas {{minutes}} minutos",
+    "slotsCount": "{{count}} espacios",
+    "until": "hasta",
+    "oneHourPlus": "1 hora+",
+    "thirtyMinutes": "30 min",
+    "timeDisplay": {
+      "hoursOnly": "{{hours}} horas",
+      "minutesOnly": "{{minutes}} minutos",
+      "hoursAndMinutes": "{{hours}} horas {{minutes}} minutos"
+    },
+    "dayNames": {
+      "0": "Domingo",
+      "1": "Lunes",
+      "2": "Martes",
+      "3": "Miércoles",
+      "4": "Jueves",
+      "5": "Viernes",
+      "6": "Sábado"
+    }
+  },
+  "features": {
+    "title": "¿Por qué elegir nuestro Analizador de Calendario?",
+    "subtitle": "Características poderosas para ayudarte a gestionar mejor tu tiempo",
+    "smart": {
+      "title": "Análisis Inteligente",
+      "description": "Algoritmos avanzados detectan conflictos y optimizan tu horario automáticamente"
+    },
+    "privacy": {
+      "title": "Privacidad Primero",
+      "description": "Todo el procesamiento ocurre en tu navegador. Tus datos de calendario nunca salen de tu dispositivo"
+    },
+    "formats": {
+      "title": "Soporte Universal",
+      "description": "Funciona con archivos ICS de Google Calendar, Outlook, Apple Calendar y más"
+    },
+    "export": {
+      "title": "Exportar Resultados",
+      "description": "Exporta tus espacios de tiempo libre como archivos ICS o compártelos con otros"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Analizador de Tiempo Libre. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "support": "Soporte"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior"
+  }
+} 
