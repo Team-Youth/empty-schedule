@@ -56,8 +56,12 @@ A privacy-first, multi-language web application that analyzes your ICS calendar 
    ```bash
    # Google Analytics
    NEXT_PUBLIC_GA_ID=YOUR_GA_MEASUREMENT_ID
+   
+   # Google AdSense (optional)
+   NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-XXXXXXXXXXXXXXXX
    ```
    Replace `YOUR_GA_MEASUREMENT_ID` with your actual Google Analytics 4 measurement ID (e.g., `G-XXXXXXXXXX`)
+   Replace `ca-pub-XXXXXXXXXXXXXXXX` with your AdSense publisher ID
 
 4. **Run the development server**
    ```bash
@@ -95,6 +99,48 @@ The application automatically tracks:
 - No personal calendar content is transmitted
 - Users can opt-out via browser settings
 - GDPR and privacy-friendly implementation
+
+## 💰 AdSense Integration
+
+This project includes Google AdSense integration for monetization.
+
+### Setting Up AdSense
+
+1. Go to [Google AdSense](https://www.google.com/adsense/)
+2. Create an account and add your website
+3. Get your **Publisher ID** (starts with `ca-pub-`)
+4. Create ad units and get **Ad Slot IDs**
+5. Add the Publisher ID to your `.env.local` file
+
+### Ad Placements
+
+The application includes strategically placed ads:
+- 🔝 **Header Banner**: Below the hero section
+- 📊 **Content Rectangle**: Between main sections  
+- 📱 **Responsive Design**: Automatically adapts to screen sizes
+
+### Ad Configuration
+
+To customize ad placements:
+
+1. Edit `pages/index.tsx` to modify ad positions
+2. Update ad slot IDs in the `AdBanner` components
+3. Adjust ad formats: `auto`, `rectangle`, `horizontal`, `vertical`
+
+```tsx
+<AdBanner 
+  adSlot="YOUR_AD_SLOT_ID" 
+  adFormat="rectangle"
+  className="my-4"
+/>
+```
+
+### Revenue Optimization
+
+- **Strategic Placement**: Ads are placed in high-visibility areas
+- **Responsive Design**: Ads adapt to different screen sizes
+- **Non-intrusive**: Maintains good user experience
+- **Performance Optimized**: Lazy loading and async scripts
 
 ## 📁 Project Structure
 

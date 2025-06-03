@@ -9,6 +9,7 @@ import Header from '../src/components/Header'
 import Hero from '../src/components/Hero'
 import Features from '../src/components/Features'
 import Footer from '../src/components/Footer'
+import AdBanner from '../src/components/ui/AdBanner'
 
 // Dynamic import to avoid SSR issues with file upload
 const CalendarAnalyzer = dynamic(() => import('../src/components/CalendarAnalyzer'), {
@@ -70,11 +71,37 @@ export default function Home() {
         <Header />
         <main>
           <Hero />
+          
+          {/* 광고 배치 1: Hero 섹션 하단 */}
+          <section className="py-8 px-4">
+            <div className="max-w-4xl mx-auto">
+              <AdBanner 
+                adSlot="1234567890" 
+                adFormat="horizontal"
+                className="mb-8"
+                style={{ minHeight: '90px' }}
+              />
+            </div>
+          </section>
+          
           <section className="py-16 px-4">
             <div className="max-w-7xl mx-auto">
               <CalendarAnalyzer />
             </div>
           </section>
+          
+          {/* 광고 배치 2: CalendarAnalyzer 하단 */}
+          <section className="py-8 px-4">
+            <div className="max-w-4xl mx-auto">
+              <AdBanner 
+                adSlot="0987654321" 
+                adFormat="rectangle"
+                className="mb-8"
+                style={{ minHeight: '250px' }}
+              />
+            </div>
+          </section>
+          
           <Features />
         </main>
         <Footer />

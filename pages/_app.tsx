@@ -5,6 +5,7 @@ import Script from 'next/script'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import * as gtag from '../src/lib/gtag'
+import * as adsense from '../src/lib/adsense'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,6 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       gtag.pageview(url)
+      // AdSense 광고 새로고침 (SPA에서 페이지 전환 시)
+      adsense.refreshAds()
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
@@ -57,6 +60,16 @@ function MyApp({ Component, pageProps }: AppProps) {
             }}
           />
         </>
+      )}
+      
+      {/* Google AdSense */}
+      {adsense.ADSENSE_CLIENT_ID && (
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.ADSENSE_CLIENT_ID}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       )}
       
       <Component {...pageProps} />
