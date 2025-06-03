@@ -1,0 +1,52 @@
+{
+  "name": "free-time-analyzer",
+  "version": "1.0.0",
+  "description": "Analyze your calendar ICS files to find free time slots",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "framer-motion": "^10.16.0",
+    "i18next": "^23.7.0",
+    "lucide-react": "^0.294.0",
+    "next": "^14.0.0",
+    "next-i18next": "^15.2.0",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.10.1",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.5.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.0",
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.2.0"
+  },
+  "keywords": [
+    "calendar",
+    "ics",
+    "schedule",
+    "free-time",
+    "time-management",
+    "productivity"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "title": "Free Time Analyzer - Find Available Slots in Your Calendar",
+    "description": "Upload your ICS calendar file and instantly discover free time slots. Optimize your schedule and find perfect meeting times with our smart calendar analyzer.",
+    "keywords": "calendar analyzer, ICS parser, free time finder, schedule optimizer, meeting planner, time management, calendar gaps"
+  },
+  "nav": {
+    "title": "📅 Free Time Analyzer",
+    "home": "Home",
+    "about": "About",
+    "privacy": "Privacy"
+  },
+  "hero": {
+    "title": "Find Your Free Time Instantly",
+    "subtitle": "Upload your calendar file and discover available time slots for meetings, tasks, or personal time",
+    "cta": "Start Analyzing"
+  },
+  "upload": {
+    "title": "Upload Calendar File",
+    "button": "📁 Choose ICS File",
+    "loaded": "{{count}} events loaded",
+    "dragDrop": "Drag & drop your ICS file here or click to browse",
+    "formats": "Supports .ics files from Google Calendar, Outlook, Apple Calendar, and more"
+  },
+  "settings": {
+    "title": "Analysis Settings",
+    "dateRange": "Date Range",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "workHours": "Working Hours",
+    "workStart": "Work Start Time",
+    "workEnd": "Work End Time",
+    "options": "Options",
+    "includeWeekends": "Include Weekends",
+    "minDuration": "Minimum Duration (minutes)",
+    "maxGap": "Maximum Gap Between Events (minutes)"
+  },
+  "analyze": {
+    "button": "Analyze Schedule",
+    "processing": "Analyzing...",
+    "error": "Please set start and end dates"
+  },
+  "results": {
+    "title": "📊 Analysis Results",
+    "summary": "Summary",
+    "period": "Analysis Period",
+    "totalEvents": "Total Events",
+    "freeSlots": "Free Time Slots",
+    "totalFreeTime": "Total Free Time",
+    "noFreeTime": "No free time slots found in the selected period",
+    "hours": "hours",
+    "minutes": "minutes",
+    "freeTimeList": "🕐 Available Time Slots",
+    "dayNames": {
+      "0": "Sunday",
+      "1": "Monday", 
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday"
+    }
+  },
+  "features": {
+    "title": "Why Choose Our Calendar Analyzer?",
+    "subtitle": "Powerful features to help you manage your time better",
+    "smart": {
+      "title": "Smart Analysis",
+      "description": "Advanced algorithms detect conflicts and optimize your schedule automatically"
+    },
+    "privacy": {
+      "title": "Privacy First",
+      "description": "All processing happens in your browser. Your calendar data never leaves your device"
+    },
+    "formats": {
+      "title": "Universal Support",
+      "description": "Works with ICS files from Google Calendar, Outlook, Apple Calendar, and more"
+    },
+    "export": {
+      "title": "Export Results",
+      "description": "Export your free time slots as ICS files or share them with others"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Free Time Analyzer. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "support": "Support"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  }
+} 

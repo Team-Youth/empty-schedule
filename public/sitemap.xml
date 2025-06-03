@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- English (default) -->
+  <url>
+    <loc>https://your-domain.com/</loc>
+    <lastmod>2024-01-15T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://your-domain.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://your-domain.com/ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://your-domain.com/ja" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://your-domain.com/zh" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://your-domain.com/es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://your-domain.com/fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://your-domain.com/de" />
+  </url>
+
+  <!-- Korean -->
+  <url>
+    <loc>https://your-domain.com/ko</loc>
+    <lastmod>2024-01-15T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://your-domain.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://your-domain.com/ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://your-domain.com/ja" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://your-domain.com/zh" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://your-domain.com/es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://your-domain.com/fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://your-domain.com/de" />
+  </url>
+
+  <!-- Japanese -->
+  <url>
+    <loc>https://your-domain.com/ja</loc>
+    <lastmod>2024-01-15T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://your-domain.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://your-domain.com/ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://your-domain.com/ja" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://your-domain.com/zh" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://your-domain.com/es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://your-domain.com/fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://your-domain.com/de" />
+  </url>
+
+  <!-- Add other language versions as needed -->
+
+</urlset> 

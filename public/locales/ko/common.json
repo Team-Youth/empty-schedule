@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "title": "빈 시간대 분석기 - 캘린더의 여유 시간을 찾아보세요",
+    "description": "ICS 캘린더 파일을 업로드하고 즉시 빈 시간대를 발견하세요. 스마트 캘린더 분석기로 일정을 최적화하고 완벽한 미팅 시간을 찾아보세요.",
+    "keywords": "캘린더 분석기, ICS 파서, 빈 시간 찾기, 일정 최적화, 미팅 플래너, 시간 관리, 캘린더 공백"
+  },
+  "nav": {
+    "title": "📅 빈 시간대 분석기",
+    "home": "홈",
+    "about": "소개",
+    "privacy": "개인정보"
+  },
+  "hero": {
+    "title": "빈 시간을 즉시 찾아보세요",
+    "subtitle": "캘린더 파일을 업로드하고 미팅, 작업, 개인 시간을 위한 빈 시간대를 발견하세요",
+    "cta": "분석 시작하기"
+  },
+  "upload": {
+    "title": "캘린더 파일 업로드",
+    "button": "📁 ICS 파일 선택",
+    "loaded": "{{count}}개 일정 로드됨",
+    "dragDrop": "ICS 파일을 여기에 드래그하거나 클릭하여 찾아보세요",
+    "formats": "구글 캘린더, 아웃룩, 애플 캘린더 등의 .ics 파일을 지원합니다"
+  },
+  "settings": {
+    "title": "분석 설정",
+    "dateRange": "날짜 범위",
+    "startDate": "시작일",
+    "endDate": "종료일",
+    "workHours": "업무 시간",
+    "workStart": "업무 시작 시간",
+    "workEnd": "업무 종료 시간",
+    "options": "옵션",
+    "includeWeekends": "주말 포함",
+    "minDuration": "최소 지속 시간 (분)",
+    "maxGap": "이벤트 간 최대 간격 (분)"
+  },
+  "analyze": {
+    "button": "일정 분석하기",
+    "processing": "분석 중...",
+    "error": "시작일과 종료일을 설정해주세요"
+  },
+  "results": {
+    "title": "📊 분석 결과",
+    "summary": "요약",
+    "period": "분석 기간",
+    "totalEvents": "총 일정 개수",
+    "freeSlots": "빈 시간대 개수",
+    "totalFreeTime": "총 여유 시간",
+    "noFreeTime": "선택된 기간에 빈 시간대가 없습니다",
+    "hours": "시간",
+    "minutes": "분",
+    "freeTimeList": "🕐 사용 가능한 시간대",
+    "dayNames": {
+      "0": "일요일",
+      "1": "월요일",
+      "2": "화요일", 
+      "3": "수요일",
+      "4": "목요일",
+      "5": "금요일",
+      "6": "토요일"
+    }
+  },
+  "features": {
+    "title": "캘린더 분석기를 선택하는 이유?",
+    "subtitle": "더 나은 시간 관리를 위한 강력한 기능들",
+    "smart": {
+      "title": "스마트 분석",
+      "description": "고급 알고리즘이 충돌을 감지하고 일정을 자동으로 최적화합니다"
+    },
+    "privacy": {
+      "title": "개인정보 우선",
+      "description": "모든 처리는 브라우저에서 이루어집니다. 캘린더 데이터는 기기를 벗어나지 않습니다"
+    },
+    "formats": {
+      "title": "범용 지원",
+      "description": "구글 캘린더, 아웃룩, 애플 캘린더 등의 ICS 파일과 호환됩니다"
+    },
+    "export": {
+      "title": "결과 내보내기",
+      "description": "빈 시간대를 ICS 파일로 내보내거나 다른 사람과 공유하세요"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 빈 시간대 분석기. 모든 권리 보유.",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "support": "지원"
+  },
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "retry": "다시 시도",
+    "close": "닫기",
+    "save": "저장",
+    "cancel": "취소",
+    "continue": "계속",
+    "back": "뒤로",
+    "next": "다음",
+    "previous": "이전"
+  }
+} 
