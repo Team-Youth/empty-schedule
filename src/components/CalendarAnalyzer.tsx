@@ -373,6 +373,7 @@ const CalendarAnalyzer: React.FC = () => {
                       value={settings.workStart}
                       onChange={(e) => setSettings(prev => ({ ...prev, workStart: e.target.value }))}
                       className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      lang={locale === 'ko' ? 'en' : locale}
                     />
                   </div>
                   <div>
@@ -382,6 +383,7 @@ const CalendarAnalyzer: React.FC = () => {
                       value={settings.workEnd}
                       onChange={(e) => setSettings(prev => ({ ...prev, workEnd: e.target.value }))}
                       className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      lang={locale === 'ko' ? 'en' : locale}
                     />
                   </div>
                 </div>
