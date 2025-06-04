@@ -57,6 +57,11 @@
     "until": "until",
     "oneHourPlus": "1 hour+",
     "thirtyMinutes": "30 min",
+    "viewMode": {
+      "hourly": "Hourly View",
+      "merged": "Merged View",
+      "tooltip": "Toggle time slot display mode"
+    },
     "timeDisplay": {
       "hoursOnly": "{{hours}} hours",
       "minutesOnly": "{{minutes}} minutes",

@@ -50,13 +50,18 @@
     "noFreeTime": "선택된 기간에 빈 시간대가 없습니다",
     "hours": "시간",
     "minutes": "분",
-    "freeTimeList": "�� 사용 가능한 시간대",
+    "freeTimeList": "🕐 사용 가능한 시간대",
     "summaryText": "총 {{days}}일, {{slots}}개의 빈 시간 슬롯",
     "timeFormat": "{{hours}}시간 {{minutes}}분",
     "slotsCount": "{{count}}개 슬롯",
     "until": "까지",
     "oneHourPlus": "1시간+",
     "thirtyMinutes": "30분",
+    "viewMode": {
+      "hourly": "1시간 단위로 보기",
+      "merged": "연속 시간으로 보기",
+      "tooltip": "시간 슬롯 표시 방식을 변경합니다"
+    },
     "timeDisplay": {
       "hoursOnly": "{{hours}}시간",
       "minutesOnly": "{{minutes}}분",

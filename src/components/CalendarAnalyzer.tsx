@@ -18,6 +18,7 @@ const CalendarAnalyzer: React.FC = () => {
   const [freeSlots, setFreeSlots] = useState<FreeSlot[]>([])
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [isDragActive, setIsDragActive] = useState(false)
+  const [isHourlyView, setIsHourlyView] = useState(true)
   const [settings, setSettings] = useState<AnalysisSettings>({
     startDate: new Date().toISOString().split('T')[0],
     endDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
@@ -142,7 +143,38 @@ const CalendarAnalyzer: React.FC = () => {
     })
   }, [freeSlots])
 
-  // Group free slots by date
+  // 연속된 시간 슬롯을 병합하는 함수
+  const mergeConsecutiveSlots = useCallback((slots: FreeSlot[]): FreeSlot[] => {
+    if (slots.length <= 1) return slots
+    
+    const sortedSlots = [...slots].sort((a, b) => a.start.getTime() - b.start.getTime())
+    const merged: FreeSlot[] = []
+    let currentSlot = { ...sortedSlots[0] }
+    
+    for (let i = 1; i < sortedSlots.length; i++) {
+      const nextSlot = sortedSlots[i]
+      
+      // 현재 슬롯의 끝 시간과 다음 슬롯의 시작 시간이 연속되는지 확인
+      if (currentSlot.end.getTime() === nextSlot.start.getTime()) {
+        // 병합: 끝 시간을 다음 슬롯의 끝 시간으로 업데이트
+        currentSlot = {
+          ...currentSlot,
+          end: nextSlot.end,
+          duration: currentSlot.duration + nextSlot.duration
+        }
+      } else {
+        // 연속되지 않으면 현재 슬롯을 결과에 추가하고 새로운 슬롯 시작
+        merged.push(currentSlot)
+        currentSlot = { ...nextSlot }
+      }
+    }
+    
+    // 마지막 슬롯 추가
+    merged.push(currentSlot)
+    return merged
+  }, [])
+
+  // 날짜별로 그룹화하고 토글 상태에 따라 병합 여부 결정
   const groupSlotsByDate = useCallback((slots: FreeSlot[]) => {
     const grouped: { [key: string]: FreeSlot[] } = {}
     
@@ -154,8 +186,15 @@ const CalendarAnalyzer: React.FC = () => {
       grouped[dateKey].push(slot)
     })
     
+    // 토글 상태에 따라 각 날짜의 슬롯들을 병합할지 결정
+    if (!isHourlyView) {
+      Object.keys(grouped).forEach(dateKey => {
+        grouped[dateKey] = mergeConsecutiveSlots(grouped[dateKey])
+      })
+    }
+    
     return grouped
-  }, [])
+  }, [isHourlyView, mergeConsecutiveSlots])
 
   const formatTime = useCallback((date: Date) => {
     return date.toLocaleTimeString('en-US', { 
@@ -424,21 +463,45 @@ const CalendarAnalyzer: React.FC = () => {
       {Object.keys(groupedSlots).length > 0 && (
         <Card className="overflow-hidden">
           <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap gap-4">
               <CardTitle className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
                 {t('results.title')}
               </CardTitle>
               
-              <Button
-                onClick={exportFreeSlots}
-                variant="outline"
-                size="sm"
-                className="flex items-center gap-2 bg-white/50 backdrop-blur-sm"
-              >
-                <Download className="w-4 h-4" />
-                Export ICS
-              </Button>
+              <div className="flex items-center gap-3">
+                {/* 시간 슬롯 표시 토글 버튼 */}
+                <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-lg p-1">
+                  <Button
+                    variant={isHourlyView ? "default" : "ghost"}
+                    size="sm"
+                    onClick={() => setIsHourlyView(true)}
+                    className="h-8 px-3 text-xs font-medium"
+                    title={t('results.viewMode.tooltip')}
+                  >
+                    {t('results.viewMode.hourly')}
+                  </Button>
+                  <Button
+                    variant={!isHourlyView ? "default" : "ghost"}
+                    size="sm"
+                    onClick={() => setIsHourlyView(false)}
+                    className="h-8 px-3 text-xs font-medium"
+                    title={t('results.viewMode.tooltip')}
+                  >
+                    {t('results.viewMode.merged')}
+                  </Button>
+                </div>
+                
+                <Button
+                  onClick={exportFreeSlots}
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center gap-2 bg-white/50 backdrop-blur-sm"
+                >
+                  <Download className="w-4 h-4" />
+                  Export ICS
+                </Button>
+              </div>
             </div>
             <CardDescription>
               {t('results.summaryText', { 
@@ -514,7 +577,10 @@ const CalendarAnalyzer: React.FC = () => {
                               <Badge 
                                 className={`${style.badgeColor} text-white font-semibold shadow-lg`}
                               >
-                                {duration >= 1 ? t('results.oneHourPlus') : t('results.thirtyMinutes')}
+                                {duration >= 1 ? 
+                                  (duration >= 2 ? `${duration}${t('results.hours')}` : t('results.oneHourPlus')) 
+                                  : t('results.thirtyMinutes')
+                                }
                               </Badge>
                             </div>
                             
